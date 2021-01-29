@@ -1,7 +1,10 @@
 import Document, { DocumentContext } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
+import { withFork } from 'effector-next';
 
-export default class MyDocument extends Document {
+const enhance = withFork({ debug: false });
+
+class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
     const sheet = new ServerStyleSheet();
     const originalRenderPage = ctx.renderPage;
@@ -27,3 +30,5 @@ export default class MyDocument extends Document {
     }
   }
 }
+
+export default enhance(MyDocument);
