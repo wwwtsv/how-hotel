@@ -9,6 +9,19 @@ module.exports = {
     },
   },
   settings: {
+    'import/resolver': {
+      alias: {
+        map: [
+          ['@api', 'api'],
+          ['@components', 'components'],
+          ['@domain', 'domain'],
+          ['@shared', 'shared'],
+        ],
+      },
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      },
+    },
     react: {
       version: 'detect',
     },
@@ -42,5 +55,8 @@ module.exports = {
     ],
     'react/jsx-props-no-spreading': 'off',
     'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
+    '@typescript-eslint/ban-ts-comment': 'off',
+    'import/extensions': 'off',
+    'no-shadow': 'off',
   },
 };
