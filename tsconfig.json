@@ -27,7 +27,8 @@
       "@api/*": ["api/*"],
       "@components/*": ["components/*"],
       "@domain/*": ["domain/*"],
-      "@shared/*": ["shared-modules/*"]
+      "@shared/*": ["modules/*"],
+      "@base-components/*": ["ui/base-components/*"]
     }
   },
   "exclude": [

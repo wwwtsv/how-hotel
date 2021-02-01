@@ -2,6 +2,7 @@ module.exports = {
   root: true,
   parser: '@typescript-eslint/parser',
   parserOptions: {
+    tsconfigRootDir: './',
     ecmaVersion: 2020,
     sourceType: 'module',
     ecmaFeatures: {
@@ -10,14 +11,7 @@ module.exports = {
   },
   settings: {
     'import/resolver': {
-      alias: {
-        map: [
-          ['@api', 'api'],
-          ['@components', 'components'],
-          ['@domain', 'domain'],
-          ['@shared', 'shared'],
-        ],
-      },
+      typescript: {},
       node: {
         extensions: ['.js', '.jsx', '.ts', '.tsx'],
       },
@@ -58,5 +52,6 @@ module.exports = {
     '@typescript-eslint/ban-ts-comment': 'off',
     'import/extensions': 'off',
     'no-shadow': 'off',
+    'no-use-before-define': 'off',
   },
 };
