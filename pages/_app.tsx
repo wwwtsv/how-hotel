@@ -1,10 +1,16 @@
 import App from 'next/app';
 import { withHydrate } from 'effector-next';
+import { ThemeProvider } from 'styled-components';
+import theme from '../ui/theme';
 
 class MyApp extends App {
   render() {
     const { Component, pageProps } = this.props;
-    return <Component {...pageProps} />;
+    return (
+      <ThemeProvider theme={theme}>
+        <Component {...pageProps} />
+      </ThemeProvider>
+    );
   }
 }
 
