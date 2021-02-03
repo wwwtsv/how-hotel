@@ -1,9 +1,11 @@
 import { EndPoints } from '@api/fetch';
+import { Query, Methods } from '@domain/fetch';
 
-type Methods = 'GET';
+const request = (url: EndPoints, query: Query, method: Methods = 'GET'): Promise<Response> => {
+  const uri = new URL(`https://hotels4.p.rapidapi.com${url}`);
+  Object.keys(query).forEach((param) => uri.searchParams.append(param, query[param]));
 
-const request = (url: EndPoints, query: string, method: Methods = 'GET'): Promise<Response> => {
-  return fetch(`https://hotels4.p.rapidapi.com${url}${query}`, {
+  return fetch(uri.href, {
     method,
     headers: {
       'x-rapidapi-key': process.env.NEXT_PUBLIC_API_KEY || 'api-key',

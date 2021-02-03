@@ -8,6 +8,10 @@ declare module 'styled-components' {
         color: string;
         borderColor: string;
         background: string;
+        hover: {
+          color: string;
+          background: string;
+        };
       };
     };
   }

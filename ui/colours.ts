@@ -7,6 +7,7 @@ const colours = {
     },
     faintWeak: {
       default: '#21272c',
+      shiftUp: '#444d56',
     },
     back: {
       faintWeak: {
