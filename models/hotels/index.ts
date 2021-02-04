@@ -1,4 +1,11 @@
 import { createEffect } from 'effector-next';
-import { getList } from '@api/fetch';
+import { PlacesSuggestions } from '@domain/places';
+import { Query } from '@domain/fetch';
+import { searchPoints } from '@api/fetch';
 
-const getHotelsList = createEffect((query: string) => getList(query).then((res) => res.json()));
+const getHotelsList = createEffect(
+  async (query: Query): Promise<PlacesSuggestions> => {
+    const hotelsList = await searchPoints(query);
+    return hotelsList;
+  },
+);
