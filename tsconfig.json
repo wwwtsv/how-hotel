@@ -27,7 +27,7 @@
       "@api/*": ["api/*"],
       "@components/*": ["components/*"],
       "@domain/*": ["domain/*"],
-      "@shared/*": ["modules/*"],
+      "@models/*": ["models/*"],
       "@base-components/*": ["ui/base-components/*"]
     }
   },

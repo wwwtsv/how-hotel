@@ -2,6 +2,7 @@ import App from 'next/app';
 import { withHydrate } from 'effector-next';
 import { ThemeProvider } from 'styled-components';
 import theme from '../ui/theme';
+import '@models/init';
 
 class MyApp extends App {
   render() {
