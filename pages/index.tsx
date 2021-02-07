@@ -1,18 +1,20 @@
 import Head from 'next/head';
+import { debounce } from 'lodash';
 import Searcher from '@components/searcher';
-import { useStore } from 'effector-react';
-import { $store } from '@models/points';
+import { useEvent, useStore } from 'effector-react';
+import { $store, getPointList } from '@models/points';
 
 export default function Home() {
   const store = useStore($store);
-  const handleClick = () => {};
+  const inputEventHandler = debounce(useEvent(getPointList), 1000);
+
   return (
     <div>
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Searcher />
+      <Searcher onInput={(e) => inputEventHandler(e)} />
     </div>
   );
 }

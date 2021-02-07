@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC, FormEvent } from 'react';
 import BaseInput from '@base-components/search-input';
 import styled from 'styled-components';
 
@@ -15,8 +15,12 @@ const SearchInput = styled(BaseInput)`
   }
 `;
 
-const Searcher = () => {
-  return <SearchInput />;
+interface Props {
+  onInput: (e: FormEvent<HTMLInputElement>) => void;
+}
+
+const Searcher: FC<Props> = ({ onInput }) => {
+  return <SearchInput onInput={onInput} />;
 };
 
 export default Searcher;
