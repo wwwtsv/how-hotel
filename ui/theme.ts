@@ -1,8 +1,12 @@
-import colours from './colours';
 import { DefaultTheme } from 'styled-components';
+import colours from './colours';
 
 const theme: DefaultTheme = {
   main: {
+    accent: colours.accentStrong,
+    text: {
+      light: colours.baseBlack,
+    },
     input: {
       color: colours.baseWhite,
       borderColor: colours.input.faintWeak.shiftUp,

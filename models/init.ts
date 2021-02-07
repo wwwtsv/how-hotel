@@ -1,1 +1,1 @@
-import './points/init';
+import './places/init';

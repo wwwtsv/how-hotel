@@ -4,6 +4,10 @@ import 'styled-components';
 declare module 'styled-components' {
   export interface DefaultTheme {
     main: {
+      accent: string;
+      text: {
+        light: string;
+      };
       input: {
         color: string;
         borderColor: string;

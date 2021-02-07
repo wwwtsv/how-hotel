@@ -1,6 +1,7 @@
 const colours = {
   baseWhite: '#fff',
   baseBlack: '#0d1117',
+  accentStrong: '#34d058',
   input: {
     faintStrong: {
       default: '#30363d',

@@ -1,8 +1,8 @@
-import { PlaceGroup, PlaceType } from '@domain/places/groups';
+import { PlaceGroups, PlaceType } from '@domain/places/groups';
 
-export interface PlaceGroups {
-  group: PlaceGroup;
-  entities: Array<PlaceInfo>;
+export interface PlaceGroup {
+  group: PlaceGroups;
+  entities: PlaceInfo[];
 }
 
 export interface PlaceInfo {
@@ -25,5 +25,5 @@ export interface PlacesSuggestions {
   autoSuggestInstance: null;
   trackingID: string;
   misspellingfallback: false;
-  suggestion: Array<PlaceGroups[]>;
+  suggestions: PlaceGroup[];
 }
