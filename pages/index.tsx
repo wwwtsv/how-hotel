@@ -4,6 +4,7 @@ import Searcher from '@components/searcher';
 import { useEvent, useStore } from 'effector-react';
 import { $store, getPlaceList } from '@models/places';
 import PlaceList from '@components/place-list';
+import Layout from '@components/layout';
 
 export default function Home() {
   const store = useStore($store);
@@ -16,8 +17,10 @@ export default function Home() {
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Searcher onInput={(e) => inputEventHandler({ query: { query: e.currentTarget.value } })} />
-      <PlaceList loading={loading} places={store.suggestions?.suggestions} />
+      <Layout>
+        <Searcher onInput={(e) => inputEventHandler({ query: { query: e.currentTarget.value } })} />
+        <PlaceList loading={loading} places={store.suggestions?.suggestions} />
+      </Layout>
     </div>
   );
 }

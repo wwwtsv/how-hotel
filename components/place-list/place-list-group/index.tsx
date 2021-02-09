@@ -1,5 +1,7 @@
 import React, { FC } from 'react';
 import { TitleH1 } from '@base-components/title';
+import GridBlock from '@base-components/grid-block';
+import BaseBlock from '@base-components/base-block';
 import PlaceListEntity from '@components/place-list/place-list-entity';
 import { PlaceGroup } from '@domain/places';
 import { groupIdentifier } from '@domain/places/groups';
@@ -10,12 +12,14 @@ interface Props {
 
 const PlaceListGroup: FC<Props> = ({ placeGroup }) => {
   return (
-    <div>
+    <BaseBlock>
       <TitleH1>{groupIdentifier(placeGroup.group)}</TitleH1>
-      {placeGroup.entities.map((entity) => {
-        return <PlaceListEntity entity={entity} />;
-      })}
-    </div>
+      <GridBlock>
+        {placeGroup.entities.map((entity) => {
+          return <PlaceListEntity entity={entity} />;
+        })}
+      </GridBlock>
+    </BaseBlock>
   );
 };
 

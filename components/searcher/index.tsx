@@ -4,8 +4,8 @@ import styled from 'styled-components';
 
 const SearchInput = styled(BaseInput)`
   padding: 8px 12px;
-  width: 24vw;
-  height: 40px;
+  width: 34vw;
+  height: 50px;
   transition: background-color 0.2s ease;
   outline: none;
   font-size: 24px;
