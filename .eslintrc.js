@@ -53,5 +53,6 @@ module.exports = {
     'import/extensions': 'off',
     'no-shadow': 'off',
     'no-use-before-define': 'off',
+    'react/no-array-index-key': 'off',
   },
 };

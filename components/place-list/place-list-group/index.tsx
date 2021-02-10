@@ -16,7 +16,7 @@ const PlaceListGroup: FC<Props> = ({ placeGroup }) => {
       <TitleH1>{groupIdentifier(placeGroup.group)}</TitleH1>
       <GridBlock>
         {placeGroup.entities.map((entity) => {
-          return <PlaceListEntity entity={entity} />;
+          return <PlaceListEntity key={entity.geoId} entity={entity} />;
         })}
       </GridBlock>
     </BaseBlock>

@@ -15,8 +15,8 @@ const PlaceList: FC<Props> = ({ loading, places }) => {
 
   return (
     <div>
-      {places?.map((placeGroup) => (
-        <PlaceListGroup placeGroup={placeGroup} />
+      {places?.map((placeGroup, i) => (
+        <PlaceListGroup key={i} placeGroup={placeGroup} />
       ))}
     </div>
   );

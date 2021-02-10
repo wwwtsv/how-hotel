@@ -6,7 +6,7 @@ import { $store, getPlaceList } from '@models/places';
 import PlaceList from '@components/place-list';
 import Layout from '@components/layout';
 
-export default function Home() {
+export default function Home({ places }) {
   const store = useStore($store);
   const loading = useStore(getPlaceList.pending);
   const inputEventHandler = debounce(useEvent(getPlaceList), 1000);
@@ -19,8 +19,26 @@ export default function Home() {
       </Head>
       <Layout>
         <Searcher onInput={(e) => inputEventHandler({ query: { query: e.currentTarget.value } })} />
-        <PlaceList loading={loading} places={store.suggestions?.suggestions} />
+        <PlaceList
+          loading={loading}
+          places={store.suggestions?.suggestions || places.suggestions.suggestions}
+        />
       </Layout>
     </div>
   );
+}
+
+export async function getStaticProps() {
+  /* const request = await searchPlaces({ query: 'new york' });
+  const places = await request.json(); */
+
+  await getPlaceList({ query: { query: 'new york' } });
+  const places = $store.getState();
+
+  return {
+    props: {
+      places,
+    },
+    revalidate: 2,
+  };
 }
