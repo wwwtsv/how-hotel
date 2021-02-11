@@ -5,8 +5,9 @@ import { useEvent, useStore } from 'effector-react';
 import { $store, getPlaceList } from '@models/places';
 import PlaceList from '@components/place-list';
 import Layout from '@components/layout';
+import { InitialState } from '@models/places/types';
 
-export default function Home({ places }) {
+export default function Home({ initData }: { initData: InitialState }) {
   const store = useStore($store);
   const loading = useStore(getPlaceList.pending);
   const inputEventHandler = debounce(useEvent(getPlaceList), 1000);
@@ -18,10 +19,10 @@ export default function Home({ places }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-        <Searcher onInput={(e) => inputEventHandler({ query: { query: e.currentTarget.value } })} />
+        <Searcher onInput={(e) => inputEventHandler({ query: e.currentTarget.value })} />
         <PlaceList
           loading={loading}
-          places={store.suggestions?.suggestions || places.suggestions.suggestions}
+          places={store.places?.suggestions || initData.places?.suggestions}
         />
       </Layout>
     </div>
@@ -29,15 +30,12 @@ export default function Home({ places }) {
 }
 
 export async function getStaticProps() {
-  /* const request = await searchPlaces({ query: 'new york' });
-  const places = await request.json(); */
-
-  await getPlaceList({ query: { query: 'new york' } });
-  const places = $store.getState();
+  await getPlaceList({ query: 'new york' });
+  const initData = $store.getState();
 
   return {
     props: {
-      places,
+      initData,
     },
     revalidate: 2,
   };

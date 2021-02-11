@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import Loading from '@base-components/loading';
 import { PlaceGroup } from '@domain/places';
 import PlaceListGroup from '@components/place-list/place-list-group';

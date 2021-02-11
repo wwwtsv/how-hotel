@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import { TitleH1 } from '@base-components/title';
 import GridBlock from '@base-components/grid-block';
 import BaseBlock from '@base-components/base-block';

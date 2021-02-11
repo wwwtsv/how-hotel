@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import Container from '@base-components/container';
 
 const Layout: FC = ({ children }) => {

@@ -2,23 +2,26 @@ import { createEffect, createStore } from 'effector-next';
 import { PlacesSuggestions } from '@domain/places';
 import { Query } from '@domain/fetch';
 import { searchPlaces } from '@api/fetch';
+import { create } from 'domain';
 import { InitialState } from './types';
 
-const getPlaceList = createEffect<{ query: Query }, PlacesSuggestions>({
+const getPlaceList = createEffect<Query, PlacesSuggestions>({
   name: 'GetPlaceList',
-  handler: async ({ query }) => {
+  handler: async (query) => {
     const getHotelList = await searchPlaces(query);
     return getHotelList.json();
   },
 });
 
+const getPlaceDetails = createEffect();
+
 const initialState: InitialState = {
-  suggestions: null,
+  places: null,
 };
 
-const $store = createStore(initialState).on(getPlaceList.doneData, (state, suggestions) => ({
+const $store = createStore(initialState).on(getPlaceList.doneData, (state, places) => ({
   ...state,
-  suggestions,
+  places,
 }));
 
 export { $store, getPlaceList };

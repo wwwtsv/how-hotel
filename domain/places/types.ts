@@ -27,3 +27,9 @@ export interface PlacesSuggestions {
   misspellingfallback: false;
   suggestions: PlaceGroup[];
 }
+
+type PlaceDetailsStatus = string;
+
+export interface PlaceDetails {
+  status: PlaceDetailsStatus;
+}
