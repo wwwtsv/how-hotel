@@ -10,7 +10,7 @@ export enum EndPoints {
 }
 
 export const searchPlaces = (query: Query): Promise<Response> => request(EndPoints.search, query);
+export const getDetails = (query: Query): Promise<Response> => request(EndPoints.details, query);
 export const getPointPhoto = (query: Query) => request(EndPoints.photos, query);
-export const getDetails = (query: Query) => request(EndPoints.details, query);
 export const getMetaData = (query: Query) => request(EndPoints.metaData, query);
 export const getList = (query: Query) => request(EndPoints.list, query);

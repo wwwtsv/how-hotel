@@ -1,35 +1,16 @@
-import { PlaceGroups, PlaceType } from '@domain/places/groups';
+export type SearchTerm = string;
 
-export interface PlaceGroup {
-  group: PlaceGroups;
-  entities: PlaceInfo[];
-}
+export type PlaceDetailsStatus = string;
 
-export interface PlaceInfo {
-  geoId: string;
-  destinationId: string;
-  landmarkCityDestinationId: null;
-  type: PlaceType;
-  caption: string;
-  redirectPage: string;
+export type PlaceFeature = string;
+
+export interface PlaceCoordinates {
   latitude: number;
   longitude: number;
-  name: string;
 }
 
-type SearchTerm = string;
-
-export interface PlacesSuggestions {
-  term: SearchTerm;
-  moresuggestions: number;
-  autoSuggestInstance: null;
-  trackingID: string;
-  misspellingfallback: false;
-  suggestions: PlaceGroup[];
-}
-
-type PlaceDetailsStatus = string;
-
-export interface PlaceDetails {
-  status: PlaceDetailsStatus;
+export interface PlaceLocation {
+  coordinates: PlaceCoordinates;
+  resolvedLocation: string;
+  locationName: string;
 }

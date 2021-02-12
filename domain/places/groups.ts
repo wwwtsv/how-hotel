@@ -1,4 +1,11 @@
-export type PlaceGroupsChild = keyof typeof PlaceGroups;
+export enum OverviewTypes {
+  HotelFeature = 'HOTEL_FEATURE',
+  FamilyFriendlySection = 'FAMILY_FRIENDLY_SECTION',
+  LocationSection = 'LOCATION_SECTION',
+  Tagline = 'TAGLINE',
+  HotelFreebies = 'HOTEL_FREEBIES',
+}
+
 export enum PlaceGroups {
   CityGroup = 'CITY_GROUP',
   LandmarkGroup = 'LANDMARK_GROUP',

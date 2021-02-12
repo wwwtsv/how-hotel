@@ -1,8 +1,7 @@
 import { createEffect, createStore } from 'effector-next';
 import { PlacesSuggestions } from '@domain/places';
 import { Query } from '@domain/fetch';
-import { searchPlaces } from '@api/fetch';
-import { create } from 'domain';
+import { getDetails, searchPlaces } from '@api/fetch';
 import { InitialState } from './types';
 
 const getPlaceList = createEffect<Query, PlacesSuggestions>({
@@ -13,7 +12,13 @@ const getPlaceList = createEffect<Query, PlacesSuggestions>({
   },
 });
 
-const getPlaceDetails = createEffect();
+const getPlaceDetails = createEffect({
+  name: 'GetPlaceDetails',
+  handler: async (query) => {
+    const getPlaceList = await getDetails(query);
+    return getPlaceList.json();
+  },
+});
 
 const initialState: InitialState = {
   places: null,
