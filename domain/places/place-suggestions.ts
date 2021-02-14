@@ -1,4 +1,4 @@
-import { PlaceGroups, PlaceType, SearchTerm } from '@domain/places/index';
+import { PlaceGroups, PlaceType, SearchTerm } from '@domain/places';
 
 export interface PlaceGroup {
   group: PlaceGroups;

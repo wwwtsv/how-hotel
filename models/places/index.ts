@@ -29,4 +29,4 @@ const $store = createStore(initialState).on(getPlaceList.doneData, (state, place
   places,
 }));
 
-export { $store, getPlaceList };
+export { $store, getPlaceList, getPlaceDetails };

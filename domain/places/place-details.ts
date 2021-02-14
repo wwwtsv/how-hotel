@@ -1,9 +1,4 @@
-import {
-  OverviewTypes,
-  PlaceDetailsStatus,
-  PlaceFeature,
-  PlaceLocation,
-} from '@domain/places/index';
+import { OverviewTypes, PlaceDetailsStatus, PlaceFeature, PlaceLocation } from '@domain/places';
 
 export interface OverviewSection {
   title: string;
@@ -24,7 +19,10 @@ export interface PlaceDetailsMeta {
 export interface PlaceDetails {
   pdpHeader: PlaceDetailsMeta;
   overview: Array<OverviewSection>;
-  hotelWelcomeRewards: {};
+  hotelWelcomeRewards: {
+    applies: true;
+    info: string;
+  };
   propertyDescription: {};
   guestReviews: {};
   atAGlance: {};
