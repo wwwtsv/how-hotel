@@ -9,10 +9,6 @@ const SearchInput = styled(BaseInput)`
   transition: background-color 0.2s ease;
   outline: none;
   font-size: 24px;
-  &:focus {
-    background: ${(props) => props.theme.main.input.hover.background};
-    color: ${(props) => props.theme.main.input.hover.color};
-  }
 `;
 
 interface Props {
