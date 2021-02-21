@@ -1,6 +1,7 @@
 import React, { FC, FormEvent } from 'react';
 import BaseInput from '@base-components/search-input';
 import styled from 'styled-components';
+import Switcher from '@base-components/switcher';
 
 const SearchInput = styled(BaseInput)`
   padding: 8px 12px;
@@ -16,7 +17,12 @@ interface Props {
 }
 
 const Searcher: FC<Props> = ({ onInput }) => {
-  return <SearchInput onInput={onInput} />;
+  return (
+    <div>
+      <SearchInput onInput={onInput} />
+      <Switcher />
+    </div>
+  );
 };
 
 export default Searcher;

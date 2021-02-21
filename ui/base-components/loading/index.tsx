@@ -8,8 +8,8 @@ const Loading = styled.div`
   border-right: 4px solid;
   border-bottom: 4px solid;
   border-left: 4px solid;
-  border-top-color: ${(props) => props.theme.main.accent};
-  border-right-color: ${(props) => props.theme.main.accent};
+  border-top-color: ${(props) => props.theme.accent};
+  border-right-color: ${(props) => props.theme.accent};
   border-left-color: transparent;
   border-bottom-color: transparent;
   animation: spin infinite linear 1s;

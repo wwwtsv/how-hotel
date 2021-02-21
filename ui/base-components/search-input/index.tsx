@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
 const BaseInput = styled.input`
-  color: ${(props) => props.theme.main.input.color};
-  background: ${(props) => props.theme.main.input.background};
-  border: 1px solid ${(props) => props.theme.main.input.borderColor};
+  color: ${(props) => props.theme.color};
+  background: transparent;
+  border: 1px solid ${(props) => props.theme.border};
   border-radius: 8px;
 `;
 

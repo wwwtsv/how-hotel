@@ -15,7 +15,7 @@ export default function Home({ initData }: { initData: InitialState }) {
   return (
     <div>
       <Head>
-        <title>Create Next App</title>
+        <title>Next app with styled-components and typescript</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
