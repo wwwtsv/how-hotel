@@ -1,7 +1,7 @@
-import React, { FC, FormEvent } from 'react';
+import { FC, FormEvent } from 'react';
 import BaseInput from '@base-components/search-input';
 import styled from 'styled-components';
-import Switcher from '@base-components/switcher';
+import ThemeSwitcher from '@components/theme-switcher';
 
 const SearchInput = styled(BaseInput)`
   padding: 8px 12px;
@@ -16,12 +16,17 @@ interface Props {
   onInput: (e: FormEvent<HTMLInputElement>) => void;
 }
 
+const Content = styled.div`
+  display: grid;
+  grid: auto-flow 1fr / auto-flor 1fr;
+`;
+
 const Searcher: FC<Props> = ({ onInput }) => {
   return (
-    <div>
+    <Content>
       <SearchInput onInput={onInput} />
-      <Switcher />
-    </div>
+      <ThemeSwitcher />
+    </Content>
   );
 };
 
